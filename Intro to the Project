@@ -1,0 +1,34 @@
+CS4048 – Data Science A1 (Web Scraping Project)
+
+A clean, beginner-friendly collection of five mini web-scraping tasks plus lightweight PDF exporters, written to run directly from PyCharm (or any terminal) and to be easy to read, test, and grade.
+
+All Selenium tasks start from the site’s homepage and perform real runtime navigation (per TA requirement). Each task saves tidy CSVs and (where applicable) a PDF report.
+
+Contents
+
+Task 1 – Dawn News (Requests + BeautifulSoup)
+Scrape the top 30 headlines from dawn.com (and /latest-news).
+Output: dawn_top30_headlines.csv (+ optional …pdf)
+Columns: headline, url, scraped_at, source
+
+Task 2 – PSX Market Summary (Requests + BS4)
+Parse key index data (Index Name, LDCP, Open, High, Low, Current, Change, Volume).
+Output: psx_indices.csv (+ optional …pdf)
+Columns: Index Name, LDCP, Open, High, Low, Current, Change, Change %, Volume, scraped_at, source[, source_as_of]
+
+Task 3 – QS World Rankings (Selenium + BS4, fallback HTML)
+Navigate to QS rankings from the homepage, attempt dynamic scrape; if the UI is JS-heavy, use a documented static fallback.
+Output: qs_top50.csv (+ optional …pdf)
+Columns: University, Country, OverallScore, SubjectRanking, Region
+Note: Overall/Subject may be blank if not present in publicly parsed HTML; this limitation is explained transparently.
+
+Task 4 – Daraz “iPhone 15” (Selenium + BS4)
+From the home page, search “iphone 15”, scrape ≥20 listings.
+Output: daraz_iphone15_listings.csv (+ Task4_Daraz_Listings_Report_*.pdf)
+Columns: Title, Price, Seller, Ratings, DeliveryOptions, ProductURL
+Includes robust URL normalization, strict ratings (3.0–5.0, (N), “N sold”), and seller enrichment from product pages.
+
+Task 5 – Goodreads (Selenium + BS4)
+Start from Goodreads, navigate to two genres, scrape book lists, and compare average ratings.
+Output: goodreads_<genre>.csv, goodreads_comparison.csv (+ optional …pdf)
+Columns: Title, Author, Rating, Reviews, PubDate, BookURL
